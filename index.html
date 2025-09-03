@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delhi to Mumbai: The Complete Journey Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'purple-light': '#c9a9dd',
+                        'purple-pastel': '#b19cd9',
+                        'purple-dark': '#8e7cc3',
+                        'yellow-light': '#fff4d6',
+                        'yellow-pastel': '#ffeaa7',
+                        'yellow-bright': '#fdcb6e',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                    },
+                    boxShadow: {
+                        'purple': '0 15px 35px rgba(177, 156, 217, 0.3)',
+                        'yellow': '0 10px 25px rgba(255, 234, 167, 0.4)',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .floating-shape {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-shape:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .floating-shape:nth-child(2) {
+            animation-delay: -2s;
+        }
+
+        .floating-shape:nth-child(3) {
+            animation-delay: -4s;
+        }
+    </style>
+</head>
+
+<body class="font-poppins leading-relaxed text-gray-800 overflow-x-hidden">
+
+    <!-- Animated Background -->
+    <div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10">
+        <div class="floating-shape absolute top-1/5 left-1/10 w-20 h-20 bg-purple-pastel rounded-full opacity-10"></div>
+        <div class="floating-shape absolute top-3/5 right-1/6 w-30 h-30 bg-yellow-pastel opacity-10"
+            style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%)"></div>
+        <div class="floating-shape absolute bottom-1/5 left-1/5 w-25 h-25 bg-purple-light opacity-10 rotate-45"></div>
+    </div>
+
+    <!-- Hero Section with Split Design -->
+    <section class="h-screen flex relative overflow-hidden" id="home">
+        <!-- Delhi Side -->
+        <div class="flex-1 h-full relative flex items-center justify-center transition-all duration-700 cursor-pointer bg-cover bg-center group hover:flex-[2]"
+            style="background-image: linear-gradient(rgba(59, 130, 246, 0.7), rgba(147, 51, 234, 0.7)), url('img/1.jpg'); clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);">
+            <div
+                class="relative z-10 text-center text-white p-8 transition-transform duration-700 group-hover:scale-110">
+                <h2 class="text-5xl mb-4 font-bold drop-shadow-lg">
+                    <i class="fas fa-landmark"></i> Delhi
+                </h2>
+                <p class="text-xl mb-6 opacity-90 drop-shadow">India's Historic Capital</p>
+                <p class="mb-6 drop-shadow">Discover Mughal architecture, bustling markets, and rich heritage</p>
+                <a href="#places"
+                    class="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full font-bold border-2 border-white/30 transition-all duration-300 hover:bg-white/30 hover:-translate-y-1 hover:shadow-lg">
+                    <i class="fas fa-eye mr-2"></i> Explore Delhi
+                </a>
+            </div>
+        </div>
+
+        <!-- Mumbai Side - Updated Content -->
+        <div class="flex-1 h-full relative flex items-center justify-center transition-all duration-700 cursor-pointer bg-cover bg-center group hover:flex-[2]"
+            style="background-image: linear-gradient(rgba(255, 152, 0, 0.7), rgba(255, 87, 34, 0.7)), url('img/2.jpg'); clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);">
+            <div
+                class="relative z-10 text-center text-white p-8 transition-transform duration-700 group-hover:scale-110">
+                <h2 class="text-5xl mb-4 font-bold drop-shadow-lg">
+                    <i class="fas fa-building"></i> Mumbai
+                </h2>
+                <p class="text-xl mb-6 opacity-90 drop-shadow">City of Dreams & Bollywood</p>
+                <p class="mb-6 drop-shadow">Experience marine drives, iconic landmarks, and the bustling financial
+                    capital</p>
+                <a href="#places"
+                    class="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full font-bold border-2 border-white/30 transition-all duration-300 hover:bg-white/30 hover:-translate-y-1 hover:shadow-lg">
+                    <i class="fas fa-city mr-2"></i> Discover Mumbai
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm py-4 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-6xl mx-auto flex justify-center gap-8 px-8">
+            <a href="#home"
+                class="text-purple-dark font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-white hover:-translate-y-1 hover:bg-gradient-to-r hover:from-purple-pastel hover:to-yellow-pastel hover:shadow-purple relative overflow-hidden group">
+                <span class="relative z-10"><i class="fas fa-home mr-2"></i> Home</span>
+            </a>
+            <a href="#journey"
+                class="text-purple-dark font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-white hover:-translate-y-1 hover:bg-gradient-to-r hover:from-purple-pastel hover:to-yellow-pastel hover:shadow-purple relative overflow-hidden group">
+                <span class="relative z-10"><i class="fas fa-map-marked-alt mr-2"></i> Journey</span>
+            </a>
+            <a href="#culture"
+                class="text-purple-dark font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-white hover:-translate-y-1 hover:bg-gradient-to-r hover:from-purple-pastel hover:to-yellow-pastel hover:shadow-purple relative overflow-hidden group">
+                <span class="relative z-10"><i class="fas fa-palette mr-2"></i> Culture</span>
+            </a>
+            <a href="#experience"
+                class="text-purple-dark font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-white hover:-translate-y-1 hover:bg-gradient-to-r hover:from-purple-pastel hover:to-yellow-pastel hover:shadow-purple relative overflow-hidden group">
+                <span class="relative z-10"><i class="fas fa-star mr-2"></i> Experience</span>
+            </a>
+            <a href="#planning"
+                class="text-purple-dark font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-white hover:-translate-y-1 hover:bg-gradient-to-r hover:from-purple-pastel hover:to-yellow-pastel hover:shadow-purple relative overflow-hidden group">
+                <span class="relative z-10"><i class="fas fa-calendar mr-2"></i> Planning</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Simple Journey Introduction Section -->
+    <section class="py-20 opacity-0 translate-y-12 transition-all duration-500 section" id="journey">
+        <div class="max-w-6xl mx-auto px-8">
+            <!-- Main Content Card -->
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+
+                    <!-- Image Section -->
+                    <div class="relative h-96 lg:h-auto">
+                        <img src="img/3.jpg" alt="Delhi to Mumbai Journey" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="p-8 lg:p-12 flex flex-col justify-center">
+                        <div class="mb-6">
+                            <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold">
+                                Travel Guide
+                            </span>
+                        </div>
+
+                        <h2 class="text-4xl font-bold text-gray-800 mb-6">
+                            Delhi to Mumbai Travel Guide
+                        </h2>
+
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Introduction</h3>
+
+                        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                            The distance between <span class="font-semibold text-blue-600">Delhi and Mumbai</span>
+                            connects two of India's most vibrant cities, offering travellers a mix of <span
+                                class="font-semibold text-purple-600">history</span>, <span
+                                class="font-semibold text-pink-600">culture</span>, and <span
+                                class="font-semibold text-orange-600">scenic experiences</span>. Whether you're planning
+                            a business trip, a family vacation, or a road trip adventure, this guide covers all the
+                            essential details to help you make informed travel decisions.
+                        </p>
+
+
+                        <!-- Call to Action -->
+                        <div>
+                            <a href="#experience"
+                                class="inline-flex items-center bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                                <i class="fas fa-arrow-right mr-2"></i>
+                                Explore Travel Options
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+
+    <!-- Cultural Heritage Section -->
+    <section
+        class="py-20 bg-gradient-to-br from-orange-50 to-red-50 opacity-0 translate-y-12 transition-all duration-500 section"
+        id="culture">
+        <div class="max-w-6xl mx-auto px-8">
+            <h2 class="text-4xl text-center mb-12 text-purple-dark relative">
+                <i class="fas fa-landmark mr-4"></i>Historical Places: Delhi & Mumbai Heritage
+                <div
+                    class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-purple-pastel to-yellow-pastel rounded-full">
+                </div>
+            </h2>
+
+            <!-- Delhi Historical Places -->
+            <div class="mb-16">
+                <h3 class="text-center my-12 text-red-600 text-3xl font-semibold">
+                    <i class="fas fa-crown mr-3"></i>Historical Places to See in Delhi
+                </h3>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+                    Delhi, the capital of India, is a treasure trove of historical landmarks. Highlights include:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Red Fort -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="h-64 bg-cover bg-center relative" style="background-image: url('img/4.jpg')">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-red-900/80 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-xl font-bold">
+                                        <i class="fas fa-fort mr-2"></i>Red Fort
+                                    </h4>
+                                    <p class="text-sm mt-2">UNESCO World Heritage Site</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600">A stunning example of Mughal architecture and a UNESCO World
+                                Heritage Site showcasing imperial grandeur.</p>
+                        </div>
+                    </div>
+
+                    <!-- Qutub Minar -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="h-64 bg-cover bg-center relative" style="background-image: url('img/5.jpg')">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-yellow-900/80 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-xl font-bold">
+                                        <i class="fas fa-tower mr-2"></i>Qutub Minar
+                                    </h4>
+                                    <p class="text-sm mt-2">World's tallest brick minaret</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600">The world's tallest brick minaret and a symbol of Indo-Islamic art
+                                representing architectural excellence.</p>
+                        </div>
+                    </div>
+
+                    <!-- Humayun's Tomb -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="h-64 bg-cover bg-center relative" style="background-image: url('img/6.jpg')">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-green-900/80 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-xl font-bold">
+                                        <i class="fas fa-monument mr-2"></i>Humayun's Tomb
+                                    </h4>
+                                    <p class="text-sm mt-2">Precursor to Taj Mahal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600">A precursor to the Taj Mahal's grandeur, showcasing early Mughal
+                                architectural brilliance.</p>
+                        </div>
+                    </div>
+
+                    <!-- India Gate -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="h-64 bg-cover bg-center relative" style="background-image: url('img/4.jpg')">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-xl font-bold">
+                                        <i class="fas fa-archway mr-2"></i>India Gate
+                                    </h4>
+                                    <p class="text-sm mt-2">Illuminated war memorial</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600">A war memorial that comes alive with evening lights, honoring
+                                India's brave soldiers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mumbai Historical Places -->
+            <div>
+                <h3 class="text-center my-12 text-blue-600 text-3xl font-semibold">
+                    <i class="fas fa-building mr-3"></i>Historical Places to See in Mumbai
+                </h3>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto text-lg">
+                    Mumbai, India's financial hub, is equally rich in history and culture:
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Gateway of India -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="h-64 bg-cover bg-center relative" style="background-image: url('img/8.jpg')">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-orange-900/80 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-xl font-bold">
+                                        <i class="fas fa-archway mr-2"></i>Gateway of India
+                                    </h4>
+                                    <p class="text-sm mt-2">Colonial-era landmark</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600">A colonial-era landmark by the Arabian Sea, symbolizing Mumbai's
+                                historical significance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Chhatrapati Shivaji Terminus -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="h-64 bg-cover bg-center relative" style="background-image: url('img/9.jpg')">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-xl font-bold">
+                                        <i class="fas fa-train mr-2"></i>Chhatrapati Shivaji Terminus
+                                    </h4>
+                                    <p class="text-sm mt-2">Gothic & Victorian blend</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600">A UNESCO World Heritage Site blending Gothic and Victorian
+                                architecture in magnificent harmony.</p>
+                        </div>
+                    </div>
+
+                    <!-- Elephanta Caves -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="h-64 bg-cover bg-center relative" style="background-image: url('img/10.jpg')">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-teal-900/80 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-xl font-bold">
+                                        <i class="fas fa-mountain mr-2"></i>Elephanta Caves
+                                    </h4>
+                                    <p class="text-sm mt-2">Ancient rock-cut temples</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600">Ancient rock-cut temples dedicated to Lord Shiva, showcasing
+                                incredible craftsmanship.</p>
+                        </div>
+                    </div>
+
+                    <!-- Haji Ali Dargah -->
+                    <div
+                        class="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl group">
+                        <div class="h-64 bg-cover bg-center relative" style="background-image: url('img/11.jpg')">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-indigo-900/80 to-transparent flex items-end">
+                                <div class="p-6 text-white">
+                                    <h4 class="text-xl font-bold">
+                                        <i class="fas fa-mosque mr-2"></i>Haji Ali Dargah
+                                    </h4>
+                                    <p class="text-sm mt-2">Floating mosque</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600">A serene mosque floating on the Arabian Sea, offering spiritual
+                                tranquility and stunning views.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- Travel Experience Section -->
+    <section class="py-20 opacity-0 translate-y-12 transition-all duration-500 section" id="experience">
+        <div class="max-w-7xl mx-auto px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16 relative">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 rounded-3xl blur-3xl opacity-20 animate-pulse">
+                </div>
+                <div class="relative z-10">
+                    <h2
+                        class="text-5xl font-extrabold bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-700 bg-clip-text text-transparent mb-4">
+                        Explore Your Journey: Travel Experiences
+                    </h2>
+                    <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                        Discover unique ways to travel and memorable experiences from Delhi to Mumbai
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+                <!-- Flight Experience -->
+                <div
+                    class="relative rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden transition-transform transform hover:scale-105 hover:-translate-y-3 bg-gradient-to-br from-sky-300 to-blue-500 text-white flex flex-col">
+                    <img src="img/13.jpg" alt="Flight Experience" class="w-full h-56 object-cover">
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-3xl font-semibold mb-3">Flight Connect</h3>
+                            <p class="opacity-90 mb-4">Premium Air Travel</p>
+                            <ul class="list-disc pl-5 space-y-2 opacity-90">
+                                <li>Journey Time: Around 2 hours</li>
+                                <li>Best for Business Travelers & Time-Crunched</li>
+                                <li>Tip: Book early for best rates</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Train Experience -->
+                <div
+                    class="relative rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden transition-transform transform hover:scale-105 hover:-translate-y-3 bg-gradient-to-br from-green-300 to-emerald-500 text-white flex flex-col">
+                    <img src="img/14.jpg" alt="Train Experience" class="w-full h-56 object-cover">
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-3xl font-semibold mb-3">Rail Journey </h3>
+                            <p class="opacity-90 mb-4">Classic Train Journey</p>
+                            <ul class="list-disc pl-5 space-y-2 opacity-90">
+                                <li>Journey Time: 15-20 hours</li>
+                                <li>Popular: Rajdhani Express & superfast trains</li>
+                                <li>Multiple classes for all budgets</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Road Trip Experience -->
+                <div
+                    class="relative rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden transition-transform transform hover:scale-105 hover:-translate-y-3 bg-gradient-to-br from-orange-300 to-red-500 text-white flex flex-col">
+                    <img src="img/15.jpg" alt="Road Trip" class="w-full h-56 object-cover">
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-3xl font-semibold mb-3">Road Adventure</h3>
+                            <p class="opacity-90 mb-4">Ultimate Road Trip Experience</p>
+                            <ul class="list-disc pl-5 space-y-2 opacity-90">
+                                <li>Route: Delhi to Mumbai via NH48</li>
+                                <li>Scenic stops include Jaipur, Udaipur, Surat</li>
+                                <li>Enjoy regional cuisines along the way</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Features -->
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                <div class="p-6 bg-white rounded-3xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i class="fas fa-clock text-4xl text-purple-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Flexible Timing</h4>
+                    <p class="text-gray-600">Choose departure times that suit your schedule</p>
+                </div>
+                <div class="p-6 bg-white rounded-3xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i class="fas fa-shield-alt text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Safe & Secure</h4>
+                    <p class="text-gray-600">Your safety is our top priority on every journey</p>
+                </div>
+                <div class="p-6 bg-white rounded-3xl shadow-lg hover:shadow-xl transition duration-300">
+                    <i class="fas fa-headset text-4xl text-green-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">24/7 Support</h4>
+                    <p class="text-gray-600">Round-the-clock assistance for peace of mind</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    </section>
+
+    <!-- Travel Planning Section with Images -->
+    <section
+        class="py-20 bg-gradient-to-b from-gray-50 to-white opacity-0 translate-y-12 transition-all duration-500 section"
+        id="planning">
+        <div class="max-w-7xl mx-auto px-8">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <h2
+                    class="text-5xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+                    Smart Travel Planning
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Your complete guide to traveling between Delhi and Mumbai with stunning visuals and expert tips
+                </p>
+            </div>
+
+            <!-- Hero Image Cards Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+
+                <!-- Why Choose Scenic Routes Card -->
+                <div class="relative overflow-hidden rounded-3xl shadow-2xl group">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-blue-600 opacity-90"></div>
+                    <img src="img/16.jpg" alt="Udaipur Lake View"
+                        class="absolute inset-0 w-full h-full object-cover mix-blend-overlay">
+
+                    <!-- Content Overlay -->
+                    <div class="relative z-10 p-8 h-96 flex flex-col justify-end text-white">
+                        <h3 class="text-3xl font-bold mb-4 flex items-center">
+                            <i class="fas fa-mountain mr-3"></i>
+                            Why Choose Scenic Routes?
+                        </h3>
+                        <p class="text-lg mb-6 opacity-90">
+                            The Udaipur-Mount Abu route offers breathtaking cultural and natural beauty
+                        </p>
+
+                        <!-- Quick Features -->
+                        <div class="grid grid-cols-1 gap-3">
+                            <div class="flex items-center bg-white/20 rounded-lg p-3 backdrop-blur-sm">
+                                <i class="fas fa-water text-cyan-200 mr-3"></i>
+                                <span class="font-medium">Stunning lake views in Udaipur</span>
+                            </div>
+                            <div class="flex items-center bg-white/20 rounded-lg p-3 backdrop-blur-sm">
+                                <i class="fas fa-mountain text-green-200 mr-3"></i>
+                                <span class="font-medium">Hill station vibes at Mount Abu</span>
+                            </div>
+                            <div class="flex items-center bg-white/20 rounded-lg p-3 backdrop-blur-sm">
+                                <i class="fas fa-shopping-bag text-orange-200 mr-3"></i>
+                                <span class="font-medium">Vibrant street markets in Surat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toll Costs & Driving Tips Card -->
+                <div class="relative overflow-hidden rounded-3xl shadow-2xl group">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-orange-400 to-red-600 opacity-85"></div>
+                    <img src="img/17.jpg" alt="Highway Drive"
+                        class="absolute inset-0 w-full h-full object-cover mix-blend-overlay">
+
+                    <!-- Content Overlay -->
+                    <div class="relative z-10 p-8 h-96 flex flex-col justify-center text-white">
+                        <h3 class="text-3xl font-bold mb-6 flex items-center">
+                            <i class="fas fa-road mr-3"></i>
+                            Toll Costs & Driving Tips
+                        </h3>
+
+                        <!-- Toll Cost Display -->
+                        <div class="bg-white/20 rounded-2xl p-6 mb-6 backdrop-blur-sm text-center">
+                            <div class="text-4xl font-bold mb-2">₹1,500 - ₹2,000</div>
+                            <div class="text-lg opacity-90">NH48 Toll Charges</div>
+                        </div>
+
+                        <!-- Tips List -->
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-tools text-yellow-300 mr-3 text-lg"></i>
+                                <span>Service your car before starting</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-coffee text-yellow-300 mr-3 text-lg"></i>
+                                <span>Take frequent breaks to avoid fatigue</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-mobile-alt text-yellow-300 mr-3 text-lg"></i>
+                                <span>Use Google Maps for toll calculations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits Section with Photo Gallery -->
+            <div class="mb-16">
+                <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">
+                    Benefits of Traveling Between Delhi & Mumbai
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- For Tourists -->
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <img src="img/18.jpg" alt="Tourist exploring India" class="w-full h-64 object-cover">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/90 to-transparent"></div>
+
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-camera text-pink-400 text-2xl mr-3"></i>
+                                <h4 class="text-xl font-bold">For Tourists</h4>
+                            </div>
+                            <p class="text-sm opacity-90 leading-relaxed">
+                                Discover diverse cultures, cuisines, and landmarks of both cities, making the journey as
+                                enjoyable as the destination.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- For Business Travelers -->
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <img src="img/19.jpg" alt="Business traveler at airport" class="w-full h-64 object-cover">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent"></div>
+
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-briefcase text-blue-400 text-2xl mr-3"></i>
+                                <h4 class="text-xl font-bold">For Business Travelers</h4>
+                            </div>
+                            <p class="text-sm opacity-90 leading-relaxed">
+                                Leverage robust air connectivity to save time and meet critical deadlines with efficient
+                                travel options.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- For Road Trip Enthusiasts -->
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <img src="img/20.jpg" alt="Road trip adventure" class="w-full h-64 object-cover">
+
+                        <div class="absolute inset-0 bg-gradient-to-t from-orange-900/90 to-transparent"></div>
+
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-route text-orange-400 text-2xl mr-3"></i>
+                                <h4 class="text-xl font-bold">For Road Trip Enthusiasts</h4>
+                            </div>
+                            <p class="text-sm opacity-90 leading-relaxed">
+                                Enjoy the thrill of long drives with flexibility to explore scenic routes and regional
+                                cuisines.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+
+            
+
+            <!-- Compact Blue Pastel Conclusion Section -->
+            <section class="relative py-16 bg-gradient-to-br from-blue-300 via-blue-200 to-blue-100 text-blue-900">
+                <div class="max-w-4xl mx-auto px-6 text-center">
+                    <div
+                        class="inline-flex items-center justify-center w-16 h-16 bg-blue-400 rounded-full shadow-lg mx-auto mb-6">
+                        <i class="fas fa-rocket text-3xl text-blue-800"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold mb-4 leading-tight">
+                        Start Your Journey
+                    </h2>
+                    <p class="text-lg max-w-2xl mx-auto text-blue-800 mb-8">
+                        Whether you're travelling for <span class="font-semibold text-blue-700">business</span>,
+                        <span class="font-semibold text-blue-700">leisure</span>, or
+                        <span class="font-semibold text-blue-700">adventure</span>,
+                        the distance between Delhi and Mumbai offers endless possibilities for exploration. With this
+                        guide, plan your journey to make the most of your time and discover the hidden gems along the
+                        way.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-blue-100 p-4 rounded-lg shadow transition-transform hover:scale-105">
+                            <h3 class="text-lg font-semibold text-blue-800 mb-2">
+                                Fast Travel
+                            </h3>
+                            <p class="text-blue-700 text-sm">
+                                Quick flights in just 2 hours
+                            </p>
+                        </div>
+                        <div class="bg-blue-100 p-4 rounded-lg shadow transition-transform hover:scale-105">
+                            <h3 class="text-lg font-semibold text-blue-800 mb-2">
+                                Rich Culture
+                            </h3>
+                            <p class="text-blue-700 text-sm">
+                                Historic train journeys
+                            </p>
+                        </div>
+                        <div class="bg-blue-100 p-4 rounded-lg shadow transition-transform hover:scale-105">
+                            <h3 class="text-lg font-semibold text-blue-800 mb-2">
+                                Free Exploration
+                            </h3>
+                            <p class="text-blue-700 text-sm">
+                                Scenic road trips
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Spacer Between Sections -->
+            <div class="h-20 bg-gray-50"></div>
+
+            <!-- Blue Pastel Fixed Footer -->
+            <footer class="bg-blue-200 fixed bottom-0 left-0 right-0 z-50 shadow-lg">
+                <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between">
+                    <h2 class="text-3xl text-blue-900 font-semibold">
+                        Discover More of India
+                    </h2>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="inline-flex items-center gap-2 bg-blue-300 text-blue-900 py-3 px-6 rounded-lg transition hover:bg-blue-400">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Explore Delhi
+                        </a>
+                        <a href="#"
+                            class="inline-flex items-center gap-2 bg-blue-300 text-blue-900 py-3 px-6 rounded-lg transition hover:bg-blue-400">
+                            <i class="fas fa-city"></i>
+                            Explore Mumbai
+                        </a>
+                    </div>
+                </div>
+            </footer>
+
+
+            <!-- Body bottom padding to prevent content being hidden behind footer -->
+            <style>
+                body {
+                    padding-bottom: 0;
+                }
+            </style>
+
+            <script>
+                // FAQ Toggle Functionality
+                const faqQuestions = document.querySelectorAll('.faq-question');
+
+                faqQuestions.forEach(question => {
+                    question.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        const targetId = this.getAttribute('data-target');
+                        const answer = document.getElementById(targetId);
+                        const chevron = this.querySelector('.fa-chevron-down');
+
+                        if (!answer || !chevron) return;
+
+                        const isCurrentlyHidden = answer.classList.contains('hidden');
+
+                        // Close all other answers first
+                        document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                            if (otherAnswer !== answer) {
+                                otherAnswer.classList.add('hidden');
+                                const otherButton = document.querySelector(`[data-target="${otherAnswer.id}"]`);
+                                if (otherButton) {
+                                    const otherChevron = otherButton.querySelector('.fa-chevron-down');
+                                    if (otherChevron) {
+                                        otherChevron.style.transform = 'rotate(0deg)';
+                                    }
+                                }
+                            }
+                        });
+
+                        // Toggle current answer
+                        if (isCurrentlyHidden) {
+                            answer.classList.remove('hidden');
+                            chevron.style.transform = 'rotate(180deg)';
+                        } else {
+                            answer.classList.add('hidden');
+                            chevron.style.transform = 'rotate(0deg)';
+                        }
+                    });
+                });
+
+                // Parallax effect for background shapes
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const shapes = document.querySelectorAll('.floating-shape');
+
+                    shapes.forEach((shape, index) => {
+                        const speed = 0.5 + (index * 0.2);
+                        shape.style.transform = `translateY(${scrolled * speed}px)`;
+                    });
+                });
+
+                // Wait for DOM to be fully loaded
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Smooth scrolling for navigation links
+                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                        anchor.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            const target = document.querySelector(this.getAttribute('href'));
+                            if (target) {
+                                target.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        });
+                    });
+
+                    // Scroll animations
+                    const observerOptions = {
+                        threshold: 0.1,
+                        rootMargin: '0px 0px -50px 0px'
+                    };
+
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.remove('opacity-0', 'translate-y-12');
+                                entry.target.classList.add('opacity-100', 'translate-y-0');
+                            }
+                        });
+                    }, observerOptions);
+
+                    document.querySelectorAll('.section').forEach(section => {
+                        observer.observe(section);
+                    });
+                });
+            </script>
+</body>
+
+</html>
